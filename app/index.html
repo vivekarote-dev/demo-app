@@ -1,9 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DevOps Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Demo App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 40px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #00c6ff;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00a2d4;
+    }
+
+    .status {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #90ee90;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello World 1</h1>
+  <div class="container">
+    <h1>🚀 DevOps CI/CD Pipeline</h1>
+    <p>Your deployment is successful 🎉</p>
+
+    <button class="btn" onclick="showMessage()">Click Me</button>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("status").innerText =
+        "App is running successfully on EC2 using Docker!";
+    }
+  </script>
 </body>
 </html>

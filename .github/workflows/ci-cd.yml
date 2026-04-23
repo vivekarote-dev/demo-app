@@ -47,6 +47,8 @@ jobs:
         run: |
           echo "Testing container..."
 
+          docker rm -f test-container || true
+
           docker run -d -p 8080:80 --name test-container devops-demo
 
           echo "Waiting for container to start..."
@@ -56,7 +58,7 @@ jobs:
           curl -v http://localhost:8080
 
           echo "Validating content..."
-          curl http://localhost:8080 | grep "Hello"
+          curl http://localhost:8080 | grep "DevOps CI/CD Pipeline"
 
           docker rm -f test-container
 

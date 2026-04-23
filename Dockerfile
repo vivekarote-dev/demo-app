@@ -2,7 +2,7 @@ FROM nginx:latest
 
 COPY app/index.html /usr/share/nginx/html/index.html
 
-RUN cat /usr/share/nginx/index.html   # 👈 debug line
+RUN cat /usr/share/nginx/html/index.html   # 👈 debug line
 
 EXPOSE 80
 
